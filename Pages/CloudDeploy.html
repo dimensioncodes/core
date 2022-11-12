@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<title>DimensionCloud</title>
+
+<link rel="stylesheet" href="/Code/css/style.css">
+<link rel="stylesheet" href="/Code/css/MenuStyle.css">
+<link rel="stylesheet" href="/Code/css/ColorMenuStyle.css">
+<link rel="stylesheet" href="/Code/css/PortalStyle.css">
+<link rel="stylesheet" href="/Code/css/GalaxyStyle.css">
+<link rel="favicon" href="/Data/icons/favicon.ico">
+
+<script src="/Code/js/NavbarMenu.js"></script>
+<script src="/Code/js/PortalReact.js"></script>
+<script src="/Code/js/PickerColor.js"></script>
+<script src="/Code/js/PortalMenu.js"></script>
+<script src="/Code/js/WebDeploy.js"></script>
+
+<script>window.addEventListener('load', (event) => { document.getElementById("CloudDeploy").style.opacity = "1"; });</script>
+
+<img id="logo" class="logo" onclick="home()" src="/Data/logo.gif">
+
+<head>
+
+<body class="body dontselectme">
+
+  <div id="navbar" class="navbar">
+    <img id="nav-Home" class="nav-Home" onclick="home()" src="/Data/icons/webp/nav-Home.webp">
+    <img id="nav-Projects" class="nav-Projects" onclick="projects()" src="/Data/icons/webp/nav-Projects.webp">
+    <img id="nav-Price" class="nav-Price" onclick="price()" src="/Data/icons/webp/nav-Price.webp">
+    <img id="nav-Aboutus" class="nav-Aboutus" onclick="aboutus()" src="/Data/icons/webp/nav-Aboutus.webp">
+    <img id="CloudDeploy" class="CloudDeploy" onclick="CloudDeploy()" src="/Data/icons/webp/nav-Deploy.webp">
+    <img id="nav-Login" class="nav-Login" onclick="login()" src="/Data/icons/webp/nav-Login.webp">
+  </div>
+
+  <div id="galaxy" class="galaxy">
+    <img id="moon1" class="moon1" src="/Data/icons/webp/moon.webp" draggable="false">
+    <img id="moon2" class="moon2" src="/Data/icons/webp/moon.webp" draggable="false">
+    <img id="earth" class="earth" src="/Data/icons/webp/earth.webp" draggable="false">
+    <img id="ufo1" class="ufo1" src="/Data/icons/webp/ufo.webp" draggable="false">
+    <img id="ufo2" class="ufo2" src="/Data/icons/webp/ufo.webp" draggable="false">
+    <img id="saturn" class="saturn" src="/Data/icons/webp/saturn.webp" draggable="false">
+    <img id="solar" class="solar" src="/Data/icons/webp/solar.webp" draggable="false">
+    <img id="neptune" class="neptune" src="/Data/icons/webp/neptune.webp" draggable="false">
+    <img id="comet" class="comet" src="/Data/icons/comet.png" draggable="false">
+  </div>
+
+  <div id="CloudDeployPortal" class="BasePortal CloudDeployPortal">
+
+    <div id="portal-menu" class="portal-menu">
+      <div id="menuClose" class="menuBase menuClose" onclick="CloseCloudDeploy()"></div>
+      <div id="menuZoom" class="menuBase menuZoom" onclick="FullScreen()"></div>
+      <div id="menuZoomReset" class="menuBase menuZoomReset" onclick="ResetScreen()"></div>
+    </div>
+
+    <div id="deploy-status" class="deploy-status">
+      <img id="brain" class="brain" src="/Data/icons/brain.png">
+      <img id="test-tube" class="test-tube" src="/Data/icons/webp/test-tube.webp">
+      <img id="rocket" class="rocket" src="/Data/icons/webp/rocket.webp">
+    </div>
+
+    <div class="stack-image-upload">
+      <label for="file-input">
+        <img id="plus" class="plus" src="/Data/icons/webp/plus.webp">
+      </label>
+      <input id="file-input" type="file" onchange="UploadImage()" accept=".yml">
+    </div>
+
+    <div id="show-code"></div>
+  
+  </div>
+
+</body>
+</head>
+</html>
