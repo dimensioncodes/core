@@ -1,0 +1,22 @@
+services:
+
+    spacecore:
+        image: wordpress
+        links:
+        - mariadb_spacecore:mysql
+        environment:
+        - WORDPRESS_DB_PASSWORD=Moon21
+        ports:
+        - "80:80"
+        volumes:
+        - ./html_spacecore:/var/www/html
+        restart: always
+
+    mariadb_spacecore:
+        image: mariadb
+        environment:
+        - MYSQL_ROOT_PASSWORD=Moon21
+        - MYSQL_DATABASE_0=wordpress_spacecore
+        volumes:
+        - ./database_spacecore:/var/lib/mysql
+        restart: always 

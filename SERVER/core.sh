@@ -15,11 +15,8 @@ AppPass=$app_pass
 cd SERVER
 mkdir $AppName
 cd $AppName
-cat <<EOF >docker-compose.yml
-$ cat docker-compose.yaml
-version: '3.0'
-
- $AppName:
+cat <<EOF > docker-compose.yml
+$AppName:
     image: wordpress
     links:
      - mariadb_$AppName:mysql
@@ -31,7 +28,7 @@ version: '3.0'
      - ./html_$AppName:/var/www/html
     restart: always
 
- mariadb_$AppName:
+mariadb_$AppName:
     image: mariadb
     environment:
      - MYSQL_ROOT_PASSWORD=$AppPass
@@ -42,7 +39,7 @@ version: '3.0'
 EOF
 echo DimensionCloud run "$AppName" --public --cloud --port $AppPort
 wait
-docker-compose -p $AppName up -d
+docker compose -p $AppName up -d
 cd ..
 cd ..
 done
