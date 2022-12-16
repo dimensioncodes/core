@@ -30,24 +30,26 @@ cat <<EOF > $compose
 version: '3.0'
 services:
    wordpress:
-      image: wordpress
+      image: wordpress:latest
       container_name: $AppName
-      links:
-      - "mariadb:mysql"
+      links: 
+      - mariadb:mysql
       environment:
       - WORDPRESS_DB_PASSWORD= ${AppPass}
       ports:
-      - "$AppPort:80"
+      - "$AppPort:$AppPort"
       volumes:
       - "./html_$AppName:/var/www/html"
       restart: always
 
    mariadb:
-      image: mariadb
+      image: mariadb:latest
       container_name: db_$AppName
       environment:
       - MYSQL_ROOT_PASSWORD= ${AppPass}
       - MYSQL_DATABASE_0= wordpress_$AppName
+      ports:
+      - "3306:3306"
       volumes:
       - ./database_$AppName:/var/lib/mysql
       restart: always 
@@ -55,6 +57,6 @@ EOF
 
 echo DimensionCloud run "$AppName" --public --cloud --port $AppPort --env-file .env-sample
 wait
-docker compose --env-file .env-sample up
+docker compose --env-file .env-sample up -d
 cd ..
 done

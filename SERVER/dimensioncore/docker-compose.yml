@@ -1,0 +1,26 @@
+version: '3.0'
+services:
+   wordpress:
+      image: wordpress:latest
+      container_name: dimensioncore
+      links: 
+      - mariadb:mysql
+      environment:
+      - WORDPRESS_DB_PASSWORD= Dimension21Moon21
+      ports:
+      - "8080:8080"
+      volumes:
+      - "./html_dimensioncore:/var/www/html"
+      restart: always
+
+   mariadb:
+      image: mariadb:latest
+      container_name: db_dimensioncore
+      environment:
+      - MYSQL_ROOT_PASSWORD= Dimension21Moon21
+      - MYSQL_DATABASE_0= wordpress_dimensioncore
+      ports:
+      - "3306:3306"
+      volumes:
+      - ./database_dimensioncore:/var/lib/mysql
+      restart: always 
