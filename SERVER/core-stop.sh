@@ -10,5 +10,6 @@ AppName=$app
 cd $AppName
 docker-compose down
 cd ..
+wait
 rm -r $AppName
 done
