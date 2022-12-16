@@ -5,7 +5,7 @@ do
 read -p "Website name: " app_name
 read -p "$app_name port: " app_port
 read -p "$app_user user: " app_user
-read -p "$app_pass pass: " app_pass
+read -p "$app_user pass: " app_pass
 
 AppName=$app_name
 AppPort=$app_port
