@@ -1,0 +1,25 @@
+body {
+    position: fixed;
+    background-color: #1c1c1c;
+    color: #ffffff;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.BG a>img
+{
+   margin-top:0px; /*to have the space above the image*/
+   margin-bottom:0px; /*to have the space under the image*/
+}
+
+.hexagon {
+    zoom: 0.01;
+}
+
+.huerotate:hover { 
+    filter: invert(100%);
+}
+
+.nocursor { cursor:none; }
